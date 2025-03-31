@@ -124,7 +124,7 @@ async function randomDrop(client: NypsiClient) {
       logger.info(
         `random drop in ${channelId} winner: ${winner} (${await getLastKnownUsername(
           winner,
-        )}) prize: ${prize}`,
+        )}) prize: ${JSON.stringify(prize)}`,
       );
 
       addProgress(winner, "lootdrops_pro", 1);
@@ -535,7 +535,7 @@ export async function startRandomDrop(client: NypsiClient, channelId: string, ra
     logger.info(
       `random drop in ${channelId} winner: ${winner} (${await getLastKnownUsername(
         winner,
-      )}) prize: ${prize} ${rain ? "(rain)" : ""}`,
+      )}) prize: ${JSON.stringify(prize)} ${rain ? "(rain)" : ""}`,
     );
 
     if (!rain) {
